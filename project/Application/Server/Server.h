@@ -4,8 +4,12 @@
 
 class Server
 {
-	public:
+private:
+	SOCKET m_sServerSocket;
+	SOCKET m_sClientSocket;
 
+public:
+	Server();
 	int init(uint16_t port);
 	int readMessage(char* buffer, int32_t size);
 	int sendMessage(char* data, int32_t length);
