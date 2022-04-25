@@ -1,0 +1,11 @@
+Edit the following files and submit them at the end of this lab:
+
+Absolutely Required
+* Server.h
+* Server.cpp
+* Client.h
+* Client.cpp
+
+These files reside in each of your project directories.  Do not change the public interface.
+
+Do not submit any other files.  Place them in the ROOT directory of your zip file, not in a subdirectory.
