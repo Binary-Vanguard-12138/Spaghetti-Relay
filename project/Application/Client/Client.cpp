@@ -32,7 +32,12 @@ int Client::init(uint16_t port, char* address)
 
 	err = connect(sCliSocket, (struct sockaddr*)&tTcpSvrAddr, sizeof(tTcpSvrAddr));
 	if (SOCKET_ERROR == err) {
-		nRet = CONNECT_ERROR;
+		if (getError() == WSAEINTR || getError() == WSAECONNREFUSED) {
+			nRet = SHUTDOWN;
+		}
+		else {
+			nRet = CONNECT_ERROR;
+		}
 		close(sCliSocket);
 		goto end;
 	}
